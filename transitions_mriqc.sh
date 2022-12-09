@@ -4,7 +4,7 @@
 #SBATCH -p short
 #SBATCH -t 04:00:00
 #SBATCH --mem=64G
-#SBATCH -J mriqc-hf
+#SBATCH -J mriqc-ht
 #SBATCH	--mail-type=END,FAIL
 #SBATCH	--mail-user=ninakougan@northwestern.edu
 

@@ -1,0 +1,116 @@
+modules loaded
+221209-13:14:31,410 cli IMPORTANT:
+	 
+    Running MRIQC version 0.16.1:
+      * BIDS dataset path: /projects/b1108/studies/transitions/data/raw/neuroimaging/bids.
+      * Output folder: /projects/b1108/studies/transitions/data/processed/neuroimaging/mriqc.
+      * Analysis levels: ['participant'].
+
+221209-13:15:00,736 cli WARNING:
+	 IMPORTANT: Anonymized quality metrics (IQMs) will be submitted to MRIQC's metrics repository. Submission of IQMs can be disabled using the ``--no-sub`` argument. Please visit https://mriqc.readthedocs.io/en/latest/dsa.html to revise MRIQC's Data Sharing Agreement.
+221209-13:15:00,770 nipype.workflow INFO:
+	 Workflow mriqc_wf settings: ['check', 'execution', 'logging', 'monitoring']
+221209-13:15:01,394 nipype.workflow INFO:
+	 Running in parallel.
+221209-13:15:01,408 nipype.workflow INFO:
+	 [MultiProc] Running 0 tasks, and 40 jobs ready. Free memory (GB): 169.57/169.57, Free processors: 28/28.
+221209-13:15:01,504 nipype.workflow INFO:
+	 [Job 0] Cached (mriqc_wf.funcMRIQC.non_steady_state_detector).
+221209-13:15:01,508 nipype.workflow INFO:
+	 [Job 23] Cached (mriqc_wf.funcMRIQC.ComputeIQMs.provenance).
+221209-13:15:01,511 nipype.workflow INFO:
+	 [Node] Setting-up "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" in "/projects/b1108/work/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..projects..b1108..studies..transitions..data..raw..neuroimaging..bids..work..sub-t1105..ses-1..func..sub-t1105_ses-1_task-rest_run-04_bold.nii.gz/metadata".
+221209-13:15:01,639 nipype.workflow INFO:
+	 [Node] Running "metadata" ("niworkflows.interfaces.bids.ReadSidecarJSON")
+221209-13:15:01,655 nipype.workflow WARNING:
+	 Storing result file without outputs
+221209-13:15:01,657 nipype.workflow WARNING:
+	 [Node] Error on "mriqc_wf.funcMRIQC.ComputeIQMs.metadata" (/projects/b1108/work/mriqc_wf/funcMRIQC/ComputeIQMs/_in_file_..projects..b1108..studies..transitions..data..raw..neuroimaging..bids..work..sub-t1105..ses-1..func..sub-t1105_ses-1_task-rest_run-04_bold.nii.gz/metadata)
+221209-13:15:01,662 nipype.workflow ERROR:
+	 Node metadata.a11 failed to run on host qnode8143.
+221209-13:15:01,667 nipype.workflow ERROR:
+	 Saving crash info to /projects/b1108/studies/transitions/data/processed/neuroimaging/mriqc/logs/crash-20221209-131501-nck1870-metadata.a11-9848b0aa-08fc-42eb-99fd-bafb75d26276.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/plugins/multiproc.py", line 344, in _send_procs_to_workers
+    self.procs[jobid].run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/nodes.py", line 516, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/nodes.py", line 635, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/nodes.py", line 741, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/interfaces/base/core.py", line 434, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/niworkflows/interfaces/bids.py", line 580, in _run_interface
+    self.inputs.bids_validate)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/niworkflows/utils/bids.py", line 222, in _init_layout
+    layout = BIDSLayout(str(bids_dir), validate=validate)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/bids/layout/layout.py", line 136, in __init__
+    root, description = validate_root(root, validate)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/bids/layout/validation.py", line 77, in validate_root
+    json.dumps(EXAMPLE_BIDS_DESCRIPTION)
+bids.exceptions.BIDSValidationError: 'dataset_description.json' is missing from project root. Every valid BIDS dataset must have this file.
+Example contents of 'dataset_description.json': 
+{"Name": "Example dataset", "BIDSVersion": "1.0.2"}
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/plugins/multiproc.py", line 344, in _send_procs_to_workers
+    self.procs[jobid].run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/nodes.py", line 516, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/nodes.py", line 635, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/nodes.py", line 741, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/interfaces/base/core.py", line 434, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/niworkflows/interfaces/bids.py", line 580, in _run_interface
+    self.inputs.bids_validate)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/niworkflows/utils/bids.py", line 222, in _init_layout
+    layout = BIDSLayout(str(bids_dir), validate=validate)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/bids/layout/layout.py", line 136, in __init__
+    root, description = validate_root(root, validate)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/bids/layout/validation.py", line 77, in validate_root
+    json.dumps(EXAMPLE_BIDS_DESCRIPTION)
+bids.exceptions.BIDSValidationError: 'dataset_description.json' is missing from project root. Every valid BIDS dataset must have this file.
+Example contents of 'dataset_description.json': 
+{"Name": "Example dataset", "BIDSVersion": "1.0.2"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/bin/mriqc", line 10, in <module>
+    sys.exit(main())
+  File "/usr/local/miniconda/lib/python3.7/site-packages/mriqc/cli/run.py", line 74, in main
+    mriqc_wf.run(**config.nipype.get_plugin())
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/workflows.py", line 632, in run
+    runner.run(execgraph, updatehash=updatehash, config=self.config)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/plugins/base.py", line 184, in run
+    self._send_procs_to_workers(updatehash=updatehash, graph=graph)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/plugins/multiproc.py", line 348, in _send_procs_to_workers
+    jobid, graph, result={"result": None, "traceback": traceback}
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/plugins/base.py", line 227, in _clean_queue
+    raise RuntimeError("".join(result["traceback"]))
+RuntimeError: Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/plugins/multiproc.py", line 344, in _send_procs_to_workers
+    self.procs[jobid].run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/nodes.py", line 516, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/nodes.py", line 635, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/pipeline/engine/nodes.py", line 741, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/nipype/interfaces/base/core.py", line 434, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/niworkflows/interfaces/bids.py", line 580, in _run_interface
+    self.inputs.bids_validate)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/niworkflows/utils/bids.py", line 222, in _init_layout
+    layout = BIDSLayout(str(bids_dir), validate=validate)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/bids/layout/layout.py", line 136, in __init__
+    root, description = validate_root(root, validate)
+  File "/usr/local/miniconda/lib/python3.7/site-packages/bids/layout/validation.py", line 77, in validate_root
+    json.dumps(EXAMPLE_BIDS_DESCRIPTION)
+bids.exceptions.BIDSValidationError: 'dataset_description.json' is missing from project root. Every valid BIDS dataset must have this file.
+Example contents of 'dataset_description.json': 
+{"Name": "Example dataset", "BIDSVersion": "1.0.2"}
+
